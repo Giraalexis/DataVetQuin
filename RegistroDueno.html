@@ -33,66 +33,90 @@
       </nav>
       
     </header>
-    <main>
-      <div class="row">
-        <div class="col-log-6 col-md-6 col-sm-12"> <!--Registrar Dueño-->
+    <main class="bg-secondary">
+      <div class="row p-5 ">
+        <div class="col-log-6 col-md-6 col-sm-12 needs-validation"> <!--Registrar Dueño /Formulario-->
           <div class="card"> 
-            <div class="card-header">
+            <div class="card-header bg-dark text-white">
               <span class="card-title">Registrar Dueño</span>
             </div>
             <div class="card-body">
-              <!--Rut-->
-              
-              <div class="form-group"> 
-                <label class="form-label"for="txt-rut">Rut</label>
-                <input id="txt-rut"class="form-control" type="text">
+              <!--Rut-->    
+              <div class="input-group p-1"> 
+                <label class="input-group-text"for="txt-rut">Rut</label>
+                <input id="txt-rut" class="form-control" type="text">
               </div>
               <!--Nombre-->
-              <div class="form-group"> 
-                <label class="form-label"for="txt-nombre_p">Primer Nombre</label>
+              <div class="input-group p-1"> 
+                <label class="input-group-text"for="txt-nombre_p">Primer Nombre</label>
                 <input id="txt-nombre_p"class="form-control" type="text">
               </div>
               <!--s_nombre-->
-              <div class="form-group">
-                <label class="form-label"for="txt-nombre_s">Segundo Nombre</label>
+              <div class="input-group p-1">
+                <label class="input-group-text"for="txt-nombre_s">Segundo Nombre</label>
                 <input id="txt-nombre_s"class="form-control" type="text">
               </div>
               <!--apel_p-->
-              <div class="form-group">
-                <label for="txt-apel_p" class="form-label">Apellido Paterno</label>
+              <div class="input-group p-1">
+                <label for="txt-apel_p" class="input-group-text">Apellido Paterno</label>
                 <input id="txt-apel_p" type="text" class="form-control">
               </div>
               <!--apel_m-->
-              <div class="form-group">
-                <label for="txt-apel_m" class="form-label">Apellido Materno</label>
+              <div class="input-group p-1">
+                <label for="txt-apel_m" class="input-group-text">Apellido Materno</label>
                 <input id="txt-apel_m" type="text" class="form-control">
               </div>
               <!--fecha_nac-->
-              <div class="form-group">
-                <label for="txt-fecha_nac" class="form-label">Fecha de Nacimiento</label>
+              <div class="input-group p-1">
+                <label for="txt-fecha_nac" class="input-group-text">Fecha de Nacimiento</label>
                 <input id="txt-fecha_nac" class="form-control" type="text">
               </div>
               <!--correo-->
-              <div class="form-group">
-                <label for="txt-correo" class="form-label">Correo</label>
+              <div class="input-group p-1">
+                <label for="txt-correo" class="input-group-text">Correo</label>
                 <input id="txt-correo" type="text" class="form-control">
               </div>
               <!--tipo-->
-              <label for="txt-fono" class="form-label">Fono</label>
-              <input id="txt-fono"type="text" class="form-control">
+              <div class="input-group p-1">
+                <label for="txt-fono" class="input-group-text">Fono</label>
+                <input id="txt-fono"type="text" class="form-control">
+              </div>
+              <!--Botones-->
+              <div class="p-1">
+                <button class="btn btn-success float-right" >Registrar</button>
+                <button class="btn btn-info float-right mr-2">Limpiar</button>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="col-log col-md col-sm">    <!--Listado de Dueños-->
-          <div class="card">
-            <div class="card-header">
-              
-            </div>
-            <div class="card-body">
-
-            </div>
-          </div>
+        <div class="col-log col-md col-sm table-responsive">    <!--Listado de Dueños-->
+          <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th>Rut</th>
+                <th>Primer Nombre</th>
+                <th>Segundo Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Correo</th>
+                <th>Fono</th>
+              </tr>
+            </thead>
+            <tbody class="table-secondary">
+              <tr>
+                <th>19577427-7</th>
+                <th>19577427-7</th>
+                <th>19577427-7</th>
+                <th>19577427-7</th>
+                <th>19577427-7</th>
+                <th>19577427-7</th>
+                <th>19577427-7</th>
+                <th>19577427-7</th>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </main>
