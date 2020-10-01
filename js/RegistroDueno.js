@@ -27,8 +27,9 @@ btnRegistrar.addEventListener('click',()=>{
   let correo = document.getElementById("txt-correo").value;
   let fono = document.getElementById("txt-fono").value;
   let tipoCliente = document.querySelector("#tipo-si").checked;
+  let tipoClienteNo = document.querySelector("#tipo-no").checked;
   let mascota = document.getElementById("select-mascota").value;
-  let resul = Validacion(rut,nombre,apel_p,apel_m,fech_nac,correo,fono,tipoCliente,mascota);
+  let resul = Validacion(rut,nombre,apel_p,apel_m,fech_nac,correo,fono,tipoCliente,mascota,tipoClienteNo);
   if (resul){
     let dueno = {};
     dueno.rut = rut;
@@ -44,6 +45,8 @@ btnRegistrar.addEventListener('click',()=>{
     LimpiarValidacion();
     //Registrar Dueño
     window.RegistrarDueno();
+    //Mensaje op
+    Swal.fire("Registrado","Se ha registrado al dueño","success");
   }
 })
 
@@ -106,9 +109,21 @@ window.RegistrarDueno = ()=>{
 }
 //Funcion Eliminar
 window.EliminarDueno = function (){
-  const nroDueno = this.nroDueno;
-  window.Duenos.splice(nroDueno,1);
-  window.RegistrarDueno();
+  Swal.fire({
+    icon:'danger',
+    title:'¿Estas Seguro?',
+    showCancelButton: true,
+    confirmButtonText:'Borrar',
+    CancelButtonText:'Cancelar',   
+  }).then((result) => {
+    if(result.isConfirmed){
+      const nroDueno = this.nroDueno;
+      window.Duenos.splice(nroDueno,1);
+      window.RegistrarDueno(); //recargar tabla
+      Swal.fire("Eliminado","Se ha eliminado al dueño","success");
+    }
+  });
+  
 }
 //Funcion Limpiar formulario
 const btnLimpiar = document.getElementById("btn-limpiar")
@@ -144,9 +159,12 @@ function LimpiarValidacion(){
   correo.classList.remove("is-invalid","is-valid");
   let fono = document.getElementById("txt-fono")
   fono.classList.remove("is-invalid","is-valid");
+  let check = document.getElementById("check-radio");
+  check.classList.remove("border","border-danger","border-success");
+
 }
 //Funcion Validadora
-function Validacion(rut,nombre,apel_p,apel_m,fech_nac,correo,fono,tipoCliente,mascota){
+function Validacion(rut,nombre,apel_p,apel_m,fech_nac,correo,fono,tipoCliente,mascota,tipoClienteNo){
   if(rut===''){
     let rut = document.getElementById("txt-rut");
     rut.classList.add("is-invalid");
@@ -203,9 +221,24 @@ function Validacion(rut,nombre,apel_p,apel_m,fech_nac,correo,fono,tipoCliente,ma
     fono.classList.remove("is-invalid");
     fono.classList.add("is-valid");
   }
-  if(rut!==''&& nombre !==''&& apel_p !==''&& apel_m!==''&& fech_nac !==''&& correo !==''&& fono !==''&& tipoCliente !==''&& mascota){
-    return true;
+  //radiobutton
+  if(tipoCliente == false && tipoClienteNo == false){
+    let check = document.getElementById("check-radio");
+    check.classList.add("border","border-danger");
+  }else{
+    let check = document.getElementById("check-radio");
+    check.classList.remove("border","border-danger");
+    check.classList.add("border","border-success");
+  }
+  //ningun campo en blanco
+  if(tipoCliente == true || tipoClienteNo == true){
+    if(rut!==''&& nombre !==''&& apel_p !==''&& apel_m!==''&& fech_nac !==''&& correo !==''&& fono !==''&& tipoCliente !==''&& mascota ){
+      return true;
+    }else{
+      return false;
+    }
   }else{
     return false;
   }
+  
 }

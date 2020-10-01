@@ -12,4 +12,4 @@ confirmar cambios: git commit
 	para editar presionar: i
 	escape para volver a menu
 	guardar cambios: :wq
-subir a "la nuve": gir push origin
+subir a "la nuve": git push origin
