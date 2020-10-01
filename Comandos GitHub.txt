@@ -1,0 +1,15 @@
+--Logearse en Consola----------------------------------------------
+git config --global user.name "nombre"
+git config --global user.email "tucorreo"
+--Bajar/Clonar Repositorio------------------------------------------------
+
+git clone https://github.com/Giraalexis/DataVetQuin.git 
+
+--Subir Cambios----------------------------------------------------
+ver el estado de cambios: git status
+guardar cambios en local(storage) : git add -A
+confirmar cambios: git commit
+	para editar presionar: i
+	escape para volver a menu
+	guardar cambios: :wq
+subir a "la nuve": gir push origin

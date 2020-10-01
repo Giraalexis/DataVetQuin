@@ -48,7 +48,7 @@ btnRegistrar.addEventListener('click',()=>{
 })
 
 
-//Funcion Registrar Dueño
+//Funcion Registrar/Recargar Dueño
 window.RegistrarDueno = ()=>{
   const tablaDueno = document.querySelector("#tabla-dueno");
   tablaDueno.innerHTML = '';
@@ -91,12 +91,25 @@ window.RegistrarDueno = ()=>{
     if(dueno.tipoCliente){
       tr.classList.add("text-success");
     }
+    //Boton Eliminar
+    let btnEliminar = document.createElement("button")
+    btnEliminar.classList.add("btn","btn-danger","btn-sm");
+    btnEliminar.innerText = "Eliminar";
+    btnEliminar.nroDueno = i;
+    btnEliminar.addEventListener('click',window.EliminarDueno)
+    let tdbtnEliminar = document.createElement("td");
+    tdbtnEliminar.appendChild(btnEliminar);
+    tr.appendChild(tdbtnEliminar);
     //Fin
     tablaDueno.appendChild(tr);
   }
 }
 //Funcion Eliminar
-
+window.EliminarDueno = function (){
+  const nroDueno = this.nroDueno;
+  window.Duenos.splice(nroDueno,1);
+  window.RegistrarDueno();
+}
 //Funcion Limpiar formulario
 const btnLimpiar = document.getElementById("btn-limpiar")
 btnLimpiar.addEventListener('click',()=>{
