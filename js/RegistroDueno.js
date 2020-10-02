@@ -110,7 +110,7 @@ window.RegistrarDueno = ()=>{
 //Funcion Eliminar
 window.EliminarDueno = function (){
   Swal.fire({
-    icon:'danger',
+    icon:'error',
     title:'¿Estas Seguro?',
     showCancelButton: true,
     confirmButtonText:'Borrar',
