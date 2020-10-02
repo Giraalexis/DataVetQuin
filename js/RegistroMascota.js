@@ -20,11 +20,11 @@ btnSalir.addEventListener('click',()=>{
 window.Mascotas = [];
 const btnRegistrar = document.getElementById("btn-registrar");
 btnRegistrar.addEventListener('click',()=>{
-  let nombre = document.getElementById("txt-nombre").value;
-  let dueno = document.getElementById("txt-dueno").value;
-  let fech_nac = document.getElementById("txt-fech_nac").value;
-  let tipo = document.getElementById("txt-tipo").value;
-  let detalle = tinymce.get("txt-text").getContent();
+  let nombre = document.getElementById("txt-nombre").value.trim();
+  let dueno = document.getElementById("txt-dueno").value.trim();
+  let fech_nac = document.getElementById("txt-fech_nac").value.trim();
+  let tipo = document.getElementById("txt-tipo").value.trim();
+  let detalle = tinymce.get("txt-text").getContent().trim();
   let resul = Validacion(nombre,dueno,fech_nac,tipo,detalle);
   if (resul){
     let mascota = {};
