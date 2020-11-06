@@ -7,9 +7,20 @@ git clone https://github.com/Giraalexis/DataVetQuin.git
 
 --Subir Cambios----------------------------------------------------
 ver el estado de cambios: git status
+
 guardar cambios en local(storage) : git add -A
 confirmar cambios: git commit
 	para editar presionar: i
 	escape para volver a menu
 	guardar cambios: :wq
+
 subir a "la nuve": git push origin
+
+----MASTEEERRRR-----------------------------------------
+git checkout -b master
+
+21:25
+hacer el push
+
+21:25
+git branch -d main
