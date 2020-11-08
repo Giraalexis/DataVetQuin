@@ -69,6 +69,6 @@ def login(request):
                 #redireccionamos:
                 if username == "admin":
                     return redirect('/admin')
-                return redirect('home_pro.html')
+                return redirect('/')
             
     return render(request,'login.html',{'form': form})
