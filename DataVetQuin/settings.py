@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'contacto',
     'cuenta',
     'profesional',
+    'mascota',
+    
     
 ]
 

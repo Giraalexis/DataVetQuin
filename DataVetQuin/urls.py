@@ -22,5 +22,6 @@ urlpatterns = [
     path('contacto/',include('contacto.urls')),
     path('',include('cuenta.urls')),
     path('',include('profesional.urls')),
+    path('',include('mascota.urls'))
     
 ]

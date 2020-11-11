@@ -1,0 +1,44 @@
+{% extends 'base_mascota.html' %}
+{% block mascota %}
+<div class="row container-fluid pt-5">
+    <div class="col-lg-6 col-ms-6 col-sm-12 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <span>Registrar Mascota</span>
+            </div>
+            <div class="card-body">
+                <form action="" method="POST">
+                    {%csrf_token%}
+                    <div class="form-group">
+                        {{form.nombre}}
+                        {{form.nombre.errors}}
+                    </div>
+                    <div class="form-group">
+                        {{form.fecha_nac}}
+                        {{form.fecha_nac.errors}}
+                    </div>
+                    <div class="form-group pt-2 ">
+                        {{form.tipoMascota}}
+                        {{form.tipoMascota.errors}}
+                    </div>
+                    <div class="form-group pt-2 ">
+                        {{form.razaMascota}}
+                        {{form.razaMascota.errors}}
+                    </div>
+                    <div class="form-group pt-2 ">
+                        {{form.imagen}}
+                        {{form.imagen.errors}}
+                    </div>
+                    <div class="form-group pt-2 ">
+                        {{form.dueño}}
+                        {{form.dueño.errors}}
+                    </div>
+                    <button class="btn  btn-success text-white float-right">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock mascota %}
