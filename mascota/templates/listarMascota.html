@@ -20,7 +20,12 @@
                 <tbody>
                 {% for m in mascota %}
                     <tr>
-                        <td><img src="{{m.imagen.url}}" class="img-mascota" alt=""></td>                 
+                        {% if m.imagen.url == '' %}
+                            <td><img src="" class="img-mascota" alt=""></td>
+                        {% else %}
+                            <td><img src="{{m.imagen.url}}" class="img-mascota" alt=""></td> 
+                        {% endif %}
+                                        
                         <td>{{m.nombre}}</td>
                         <td>{{m.fecha_nac}}</td>
                         <td>{{m.tipoMascota}}</td>

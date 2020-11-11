@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class MascotaForm(forms.Form):
 
-    imagen = forms.ImageField(label="Imagen de mascota",required=False)
+    imagen = forms.ImageField(label="Imagen de mascota",required=True)
 
     nombre = forms.CharField(label="Ingrese nombre mascota", required=False,
     widget=forms.TextInput(attrs={'class':'form-control mb-3','placeholder':'Ingrese Nombre Mascota'}))
