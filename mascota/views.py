@@ -6,15 +6,15 @@ from .models import Mascota
 def registrarMascota(request):
     form = MascotaForm()
     if request.method == "POST":
-        form = MascotaForm(data=request.POST)
+        form = MascotaForm(request.POST, request.FILES)
         if form.is_valid():
             form_data = form.cleaned_data
             #registramos la mascota
-            Mascota.objects.create(nombre=form_data.get("nombre"),
+            Mascota.objects.create(imagen=form_data.get("imagen"),
+                                   nombre=form_data.get("nombre"),
                                    fecha_nac=form_data.get("fecha_nac"),
                                    tipoMascota=form_data.get("tipoMascota"),
                                    razaMascota=form_data.get("razaMascota"),
-                                   imagen=form_data.get("imagen"),
                                    dueño=form_data.get("dueño"))
             #limpiamos campos
             form = MascotaForm()
@@ -22,5 +22,6 @@ def registrarMascota(request):
     return render(request,'registrarMascota.html',{'form':form})
 
 def listarMascota(request):
-    
-    return render(request,'listarMascota.html')
+    mascota = Mascota.objects.all()
+    return render(request,'listarMascota.html',{'mascota':mascota})
+

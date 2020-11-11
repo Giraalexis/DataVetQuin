@@ -1,6 +1,37 @@
 {% extends 'base_mascota.html' %}
 {% block mascota %}
-
-
+<div class="row pt-5">
+    <div class="card">
+        <div class="card-header">
+            <span>Mascotas</span>
+        </div>
+        <div class="card-body">
+            <table class="table text-center ">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Fecha Nacimiento</th>
+                        <th>Tipo Mascota</th>
+                        <th>Raza Mascota</th>
+                        <th>Dueño</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for m in mascota %}
+                    <tr>
+                        <td><img src="{{m.imagen.url}}" class="img-mascota" alt=""></td>                 
+                        <td>{{m.nombre}}</td>
+                        <td>{{m.fecha_nac}}</td>
+                        <td>{{m.tipoMascota}}</td>
+                        <td>{{m.razaMascota}}</td>
+                        <td>{{m.dueño}}</td>
+                    </tr>              
+                {% endfor %}      
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
 {% endblock mascota %}

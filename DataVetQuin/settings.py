@@ -127,6 +127,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+import os 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
 #agregar conf de correo django
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = "gameduoc123@gmail.com"

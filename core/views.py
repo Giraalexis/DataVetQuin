@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 # Create your views here.
 def home(request):
 
@@ -8,3 +7,4 @@ def home(request):
 def empresa(request):
 
     return render(request,'empresa.html')
+

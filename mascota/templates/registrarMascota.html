@@ -7,13 +7,17 @@
                 <span>Registrar Mascota</span>
             </div>
             <div class="card-body">
-                <form action="" method="POST">
+                <form action="" role="form" enctype="multipart/form-data" method="POST">
                     {%csrf_token%}
-                    <div class="form-group">
+                    <div class="form-group pt-2 ">
+                        {{form.imagen}}
+                        {{form.imagen.errors}}
+                    </div>
+                    <div class="form-group pt-2">
                         {{form.nombre}}
                         {{form.nombre.errors}}
                     </div>
-                    <div class="form-group">
+                    <div class="form-group pt-2">
                         {{form.fecha_nac}}
                         {{form.fecha_nac.errors}}
                     </div>
@@ -26,14 +30,10 @@
                         {{form.razaMascota.errors}}
                     </div>
                     <div class="form-group pt-2 ">
-                        {{form.imagen}}
-                        {{form.imagen.errors}}
-                    </div>
-                    <div class="form-group pt-2 ">
                         {{form.dueño}}
                         {{form.dueño.errors}}
                     </div>
-                    <button class="btn  btn-success text-white float-right">Registrar</button>
+                    <button class="btn  btn-success text-white float-right mt-2">Registrar</button>
                 </form>
             </div>
         </div>

@@ -2,8 +2,12 @@ from django import forms
 from .models import TipoMascota
 from .models import RazaMascota
 from django.contrib.auth.models import User
+
 class MascotaForm(forms.Form):
-    nombre = forms.CharField(label="Ingrese nombre mascota", required=True,
+
+    imagen = forms.ImageField(label="Imagen de mascota",required=False)
+
+    nombre = forms.CharField(label="Ingrese nombre mascota", required=False,
     widget=forms.TextInput(attrs={'class':'form-control mb-3','placeholder':'Ingrese Nombre Mascota'}))
 
     fecha_nac = forms.DateField(label="Ingrese fecha nacimiento", required=False,
@@ -15,7 +19,6 @@ class MascotaForm(forms.Form):
     razaMascota = forms.ModelChoiceField(queryset=RazaMascota.objects.all(),
     widget=forms.Select(attrs={'class':'form-control'}))
 
-    imagen = forms.ImageField(label="Imagen de mascota", required=False)
 
     dueño = forms.ModelChoiceField(queryset=User.objects.all(),
     widget=forms.Select(attrs={'class':'form-control'}))
