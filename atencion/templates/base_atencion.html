@@ -1,0 +1,16 @@
+{% extends 'base_core.html' %}
+{% block contenido %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link  {% if request.path == '/registrarAtencion/' %}active{% endif %}" href="{% url 'registrarAtencion' %}">Registrar Atencion</a>
+        <a class="nav-link  {% if request.path == '/listarAtencion/' %}active{% endif %}" href="{% url 'listarAtencion' %}">Atenciones Registradas</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+{% block atencion %} {% endblock atencion %}
+
+{% endblock contenido %}

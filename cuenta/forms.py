@@ -6,7 +6,7 @@ class LoginForm(forms.Form):
     widget=forms.TextInput(attrs={'class':'form-control mb-3','placeholder':'Ingrese su nombre'}))
 
     password = forms.CharField(label="Ingrese Contraseña",required = True, min_length=4,max_length=50,
-    widget=forms.TextInput(attrs={'class':'form-control mb-3','placeholder':'Ingrese su contraseña'}))
+    widget=forms.TextInput(attrs={'class':'form-control mb-3','placeholder':'Ingrese su contraseña','type':'password'}))
 
 class RegisterForm(UserCreationForm):
     username = forms.CharField(label="Ingrese Nombre cuenta",required = True,
@@ -16,7 +16,7 @@ class RegisterForm(UserCreationForm):
     widget=forms.EmailInput(attrs={'class':'form-control mb-3','placeholder':'Ingrese su correo'}))
 
     password1 = forms.CharField(label="Ingrese Contraseña",required = True,
-    widget=forms.TextInput(attrs={'class':'form-control mb-3','placeholder':'Ingrese contraseña'}))
+    widget=forms.TextInput(attrs={'class':'form-control mb-3','placeholder':'Ingrese contraseña','type':'password'}))
 
     password2 = forms.CharField(label="Ingrese Contraseña",required = True,
-    widget=forms.TextInput(attrs={'class':'form-control mb-3','placeholder':'Ingrese contraseña nuevamente'}))
+    widget=forms.TextInput(attrs={'class':'form-control mb-3','placeholder':'Ingrese contraseña nuevamente','type':'password'}))

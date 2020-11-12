@@ -1,0 +1,46 @@
+{% extends 'base_atencion.html' %}
+{% block atencion %}
+<div class="row pt-5">
+    <div class="col-lg-10 col-md-10 col-sm-12 mx-auto">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <span>Mascotas</span>
+            </div>
+            <div class="card-body">
+                <table class="table text-center ">
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Tipo Mascota</th>
+                            <th>Raza Mascota</th>
+                            <th>Dueño</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for m in mascota %}
+                        <tr>
+                            {% if m.imagen.url == '' %}
+                            <td><img src="" class="img-mascota" alt=""></td>
+                            {% else %}
+                            <td><img src="{{m.imagen.url}}" class="img-mascota" alt=""></td>
+                            {% endif %}
+
+                            <td>{{m.nombre}}</td>
+                            <td>{{m.fecha_nac}}</td>
+                            <td>{{m.tipoMascota}}</td>
+                            <td>{{m.razaMascota}}</td>
+                            <td>{{m.dueño}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock atencion %}

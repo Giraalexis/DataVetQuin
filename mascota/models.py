@@ -8,7 +8,7 @@ class Mascota(models.Model):
     fecha_nac = models.DateField(verbose_name="fecha nacimiento",null=True, default=None)
     tipoMascota = models.CharField(verbose_name="tipo mascota", max_length=50)
     razaMascota = models.CharField(verbose_name="raza mascota", max_length=50)
-    dueño = models.CharField(verbose_name="rut dueño", max_length=50)
+    dueño = models.CharField(verbose_name="rut dueño", max_length=50, null=True)
 
     def __str__(self):
         return self.nombre

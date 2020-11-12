@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'cuenta',
     'profesional',
     'mascota',
+    'atencion',
+    'vacuna',
     
     
 ]
