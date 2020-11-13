@@ -13,7 +13,7 @@ def contacto(request):
             nombre = request.POST.get("nombre",'')
             correo = request.POST.get("correo",'')
             mensaje = request.POST.get("mensaje",'')
-            email = EmailMessage("Le han contactado!",
+            email = EmailMessage("Le contactaron!",
             "{} {}: dijo {}".format(nombre,correo,mensaje),
             "gameduoc123@gmail.com",
             ['gameduoc123@gmail.com'],
