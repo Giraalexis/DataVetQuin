@@ -8,4 +8,4 @@ class Vacuna(models.Model):
     laboratorio = models.CharField(verbose_name="nombre laboratorio", max_length=50)
 
     def __str__(self):
-        return self.nombre
+        return " ID: "+str(self.id)+" Vacuna: "+self.laboratorio

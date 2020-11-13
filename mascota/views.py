@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import MascotaForm
 from .models import Mascota
+from .forms import BuscarNombreMascota
 # Create your views here.
 
 def registrarMascota(request):
@@ -22,6 +23,16 @@ def registrarMascota(request):
     return render(request,'registrarMascota.html',{'form':form})
 
 def listarMascota(request):
-    mascota = Mascota.objects.all()
-    return render(request,'listarMascota.html',{'mascota':mascota})
+    form2 = BuscarNombreMascota()
+    #buscar Mascota
+    if request.method == "POST": 
+        form2 = BuscarNombreMascota(data=request.POST)
+        nombreBuscar = request.POST.get("nombreBuscar")
+        mascota = Mascota.objects.filter(nombre = nombreBuscar)
+        print(nombreBuscar)
+        if form2.is_valid():     
+            return render(request,'listarMascota.html',{'mascota':mascota,'form2':form2})
+    else:
+        mascota = Mascota.objects.all()     
+        return render(request,'listarMascota.html',{'mascota':mascota,'form2':form2})
 

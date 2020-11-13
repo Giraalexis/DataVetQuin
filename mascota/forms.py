@@ -21,3 +21,7 @@ class MascotaForm(forms.Form):
 
     dueño = forms.ModelChoiceField(queryset=User.objects.all(),required=False,
     widget=forms.Select(attrs={'class':'form-control'}))
+
+class BuscarNombreMascota(forms.Form):
+    nombreBuscar = forms.CharField(label="Ingrese nombre mascota", required=False,
+    widget=forms.TextInput(attrs={'class':'form-control mb-3','placeholder':''}))

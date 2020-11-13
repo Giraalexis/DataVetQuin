@@ -8,3 +8,13 @@
     height: 75px;
     width: 75px;
 }
+
+.img-menu{
+    font-size: 1.5em;
+    color: white;
+    padding-right: 6px;
+}
+
+.img-footer{
+    font-size: 1.5em;
+}

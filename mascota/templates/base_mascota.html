@@ -4,8 +4,8 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link  {% if request.path == '/registrarMascota/' %}active{% endif %}" href="{% url 'registrarMascota' %}">Registrar Mascota</a>
-        <a class="nav-link  {% if request.path == '/listarMascota/' %}active{% endif %}" href="{% url 'listarMascota' %}">Mascotas Registradas</a>
+        <a class="nav-link  {% if request.path == '/registrarMascota/' %}active{% endif %}" href="{% url 'registrarMascota' %}"><i class="fas fa-bone img-menu"></i>Registrar Mascota</a>
+        <a class="nav-link  {% if request.path == '/listarMascota/' %}active{% endif %}" href="{% url 'listarMascota' %}"><i class="fas fa-list img-menu"></i>Mascotas Registradas</a>
       </div>
     </div>
   </div>
